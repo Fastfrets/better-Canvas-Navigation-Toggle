@@ -1,0 +1,22 @@
+.btnParentDiv_CanvasNavToggle {
+    max-width: 50px;
+    top: 4px !important;
+    /* left-side appears to have a top z-index of 10, so uses 11 to not overshoot */
+    z-index: 11;
+    /* !important tag used because an ASU Defined class changes the opacity to 0% when the <div> 'left-side' is  set to display: none; */
+    /* This tag is only on the new btnParentDiv, which DOES NOT affect any ASU created elements or class' */
+    opacity: 100% !important;
+}
+
+.courseMenuToggleBTN_ForAfterScroll {
+
+    left: 20px;
+    padding-left: 4px !important;
+    padding-top: 0 !important;
+    padding-right: 1px !important;
+    padding-bottom: 0 !important;
+}
+
+.divDividerClass {
+    height: 20px;
+}

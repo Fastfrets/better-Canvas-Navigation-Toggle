@@ -15,11 +15,15 @@ let btnParentDiv = document.createElement('div');
 let btn = document.createElement('button');
 let i = document.createElement('i');
  
+// try...catch statement NOT required, as no code (below this method) executes if L_S HTML Element is not found.
 window.onload = function() {
+    if (document.body.contains(L_S)) {
     create_HTML_Elements()
-
-    if (window.innerWidth > 767) {
-        checkScrollY_andSet_btn_and_divDivider_display()
+        if (window.innerWidth > 767) {
+            checkScrollY_andSet_btn_and_divDivider_display()
+        }
+    } else {
+        console.log("\nExtension: \"Better Canvas Navigation Toggle\", failed to find HTML Element with ID of \"left-side\". \nScript was not executed! ")
     }
 };
 

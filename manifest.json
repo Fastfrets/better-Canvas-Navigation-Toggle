@@ -8,8 +8,8 @@
       "run_at": "document_end",
       "matches": ["https://*.asu.instructure.com/courses/*"],
       "exclude_matches": ["https://*.asu.instructure.com/courses/", "https://*.asu.instructure.com/courses"],
-      "js": ["courseMenuToggle_AfterScroll.js"],
-      "css": ["courseMenuToggle_AfterScroll.css"]
+      "js": ["scripts/courseMenuToggle_AfterScroll.js"],
+      "css": ["scripts/courseMenuToggle_AfterScroll.css"]
     }
     ],
     "action": {

@@ -19,7 +19,7 @@ let i = document.createElement('i');
 window.onload = function() {
     if (document.body.contains(L_S)) {
         create_HTML_Elements()
-        checkScrollY_andSet_btn_and_divDivider_display()
+        checkScrollYThenSetButtonDisplay()
     } else {
         console.log("\nExtension: \"Better Canvas Navigation Toggle\", failed to find HTML Element with ID of \"left-side\". \nScript was not executed! ")
     }
@@ -61,24 +61,36 @@ function create_HTML_Elements() {
 };
 
 // sets ptnParentDiv & divDivider to display = none;
-function allTopLevelElements_setDisplayNone() {
+function setTopElementsDisplayToNone() {
     btn.style.display = 'none';
     divDivider.style.display = 'none';
 };
 
 // sets ptnParentDiv & divDivider to display = block;
-function allTopLevelElements_setDisplayBlock() {
+function setTopElementsDisplayToBLock() {
     btn.style.display = 'block';
     divDivider.style.display = 'block';
 };
 
 //Checks after page load if scrolled past 92px, then sets btn display to = block if true.
-function checkScrollY_andSet_btn_and_divDivider_display() {
+function checkScrollYThenSetButtonDisplay() {
     //(scrollY > 92) is the pixel right below the page header.
     if (window.scrollY > 92 && window.innerWidth > 767) {
         btn.style.display = 'block';
     } else {
         btn.style.display = 'none';
+    }
+};
+
+// Checks if innerHeight is < 800px, then assigns a class that repositions the hamburger menu further left. 
+// this is to avoid overlaping the canvas navigation list when it becomes scrollable.
+function checkScrollXThenChangeButtonsClass() {
+    if (window.innerHeight < 800) {
+        btn.classList.add("courseMenuToggleButtonPositionLeft");
+    } else {
+        if (btn.classList.contains("courseMenuToggleButtonPositionLeft")) {
+            btn.classList.remove("courseMenuToggleButtonPositionLeft")
+        }
     }
 };
 
@@ -101,16 +113,17 @@ function onClickHamburger() {
 };
 
 window.addEventListener('scroll', function(){
-    checkScrollY_andSet_btn_and_divDivider_display();
+    checkScrollYThenSetButtonDisplay();
 }, true);
 
 window.addEventListener('resize', function() {
     if (window.innerWidth < 768) {
-        allTopLevelElements_setDisplayNone();
+        setTopElementsDisplayToNone();
     } else {
-        allTopLevelElements_setDisplayBlock();
-        checkScrollY_andSet_btn_and_divDivider_display()
+        setTopElementsDisplayToBLock();
+        checkScrollYThenSetButtonDisplay()
     }
+    checkScrollXThenChangeButtonsClass()
 })
 //FIXME
 //script should not load at url address: "asu.instructure.com/courses/" (nothing at end). needs change to manifest.json

@@ -1,3 +1,4 @@
+/* All !important tags do NOT overwrite any ASU Elements. They only affect the elements created in src = couseMenuToggle_AfterScroll.js */
 .btnParentDiv_CanvasNavToggle {
     max-width: 50px;
     top: 4px !important;
@@ -9,14 +10,18 @@
 }
 
 .courseMenuToggleBTN_ForAfterScroll {
-
-    left: 20px;
+/* (left: 20px) aligns with content better when left-side display = block */
+/* (left: 10px) aligns more centered when left-side display = none */
+    left: 10px;
     padding-left: 4px !important;
     padding-top: 0 !important;
     padding-right: 1px !important;
     padding-bottom: 0 !important;
 }
 
+.courseMenuToggleButtonPositionLeft {
+    left: 0px;
+}
 .divDividerClass {
     height: 20px;
 }

@@ -17,6 +17,7 @@ let i = document.createElement('i');
  
 // executes script only if L_S HTML Element is not found.
 window.onload = function() {
+    alert("loaded")
     if (document.body.contains(L_S)) {
         create_HTML_Elements()
         checkScrollYThenSetButtonDisplay()
@@ -125,10 +126,3 @@ window.addEventListener('resize', function() {
     }
     checkScrollXThenChangeButtonsClass()
 })
-//FIXME
-//script should not load at url address: "asu.instructure.com/courses/" (nothing at end). needs change to manifest.json
-//mobile webpage has a extra hamburgermenu in the top right!?
-//FIXME
-//Check all comments 
-//change functions to camel case.
-//*://*/*assignments/*

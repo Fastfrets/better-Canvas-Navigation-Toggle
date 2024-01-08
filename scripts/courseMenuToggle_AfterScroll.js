@@ -15,7 +15,7 @@ let btnParentDiv = document.createElement('div');
 let btn = document.createElement('button');
 let i = document.createElement('i');
  
-// executes script only if L_S HTML Element is not found.
+// executes script only if L_S HTML Element is found.
 window.onload = function() {
     if (document.body.contains(L_S)) {
         create_HTML_Elements()
@@ -25,7 +25,7 @@ window.onload = function() {
     }
 };
 
-//then appends btn <button> as the firstchild.
+//appends btn <button> as the firstchild.
 //Also deligates the properties & assigns class' to "btn" & "divDivider".
 function create_HTML_Elements() {
     W_P.insertBefore(btnParentDiv, W_P.children[1]);
@@ -47,7 +47,6 @@ function create_HTML_Elements() {
     //predefined class' used from ASU's site.
     btn.classList.add("Button");
     btn.classList.add("Button--link");
-    //onclick event.
     btn.addEventListener('click', onClickHamburger);
     //<i> element put inside the btn (this allows the use of the ASU "icon-hamburger" class)
     btn.appendChild(i);
